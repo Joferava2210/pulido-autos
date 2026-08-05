@@ -46,6 +46,31 @@ window.addEventListener('scroll', () => {
   hero.style.setProperty('--hero-offset', `${offset}px`);
 });
 
+const quotePackage = document.querySelector('#quotePackage');
+const quoteAddons = document.querySelectorAll('.quote-addon');
+const quoteTotal = document.querySelector('#quoteTotal');
+const quoteButton = document.querySelector('#quoteButton');
+
+const updateQuoteTotal = () => {
+  if (!quotePackage || !quoteTotal) return;
+  const base = Number(quotePackage.value);
+  const addonTotal = Array.from(quoteAddons).reduce((sum, input) => {
+    const checkbox = input;
+    return sum + (checkbox.checked ? Number(checkbox.value) : 0);
+  }, 0);
+  quoteTotal.textContent = `₡${(base + addonTotal).toLocaleString('es-CR')}`;
+};
+
+quotePackage?.addEventListener('change', updateQuoteTotal);
+quoteAddons.forEach((addon) => addon.addEventListener('change', updateQuoteTotal));
+
+quoteButton?.addEventListener('click', () => {
+  updateQuoteTotal();
+  alert('Tu cotización ha sido calculada. Revisa el total estimado y contáctanos para finalizar.');
+});
+
+updateQuoteTotal();
+
 galleryButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const imageSrc = button.dataset.image;
