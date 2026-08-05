@@ -13,3 +13,19 @@ Landing page para un servicio de pulido automotriz con diseño responsive, secci
 - `assets/css/styles.css` — estilos
 - `assets/js/main.js` — interacciones y animaciones
 - `assets/images/` — imágenes usadas en la página
+
+## Flujo de ramas
+
+- `develop` — rama de trabajo para ajustar y seguir mejorando el proyecto.
+- `master` — rama de producción que sirve el sitio en GitHub Pages.
+
+Para publicar cambios de `develop` a producción:
+
+1. Crear un pull request de `develop` hacia `master`.
+2. Revisar los cambios.
+3. Hacer merge en `master`.
+4. GitHub Pages desplegará el contenido de `master`.
+
+## Despliegue
+
+Este repositorio usa GitHub Actions para desplegar el sitio desde la rama `master` a `gh-pages`.

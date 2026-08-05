@@ -117,6 +117,39 @@
       </div>
     </section>
 
+    <section id="cotizacion" class="section cotizacion">
+      <div class="container">
+        <div class="quote-card card">
+          <div class="quote-header">
+            <span class="eyebrow">Cotiza rápido</span>
+            <h2>Calcula tu servicio al instante</h2>
+            <p>Selecciona tu paquete y agrega servicios opcionales para ver el precio estimado.</p>
+          </div>
+          <div class="quote-grid">
+            <label class="quote-field">
+              <span>Paquete</span>
+              <select id="quotePackage" class="input-field">
+                <option value="40000">Pulido Express — ₡40,000</option>
+                <option value="75000">Pulido Completo — ₡75,000</option>
+                <option value="100000">Pulido + Encerado — ₡100,000</option>
+              </select>
+            </label>
+            <fieldset class="quote-field quote-addons">
+              <legend>Servicios opcionales</legend>
+              <label><input class="quote-addon" type="checkbox" value="20000" checked /> Encerado extra — ₡20,000</label>
+              <label><input class="quote-addon" type="checkbox" value="25000" /> Sellado protector — ₡25,000</label>
+              <label><input class="quote-addon" type="checkbox" value="15000" /> Detalle interior — ₡15,000</label>
+            </fieldset>
+          </div>
+          <div class="quote-result">
+            <p>Total estimado</p>
+            <div class="quote-total" id="quoteTotal">₡0</div>
+            <button type="button" class="btn btn-primary" id="quoteButton">Solicitar presupuesto</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section beneficios">
       <div class="container">
         <h2>Por qué elegirnos</h2>
